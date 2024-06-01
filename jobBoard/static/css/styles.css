@@ -1,0 +1,295 @@
+/* capstone/jobBoard/static/css/styles.css */
+@font-face {
+  font-family: 'acid';
+  src: url('../fonts/viro-webfont.woff') format('woff') /* Modern Browsers */
+
+  /* You can add more formats if needed */
+}
+
+
+/* Reset Default Browser Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Use a Minimal Font Stack */
+body {
+    font-family: acid ,Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+footer{
+    flex-shrink: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+
+
+
+/* capstone/jobBoard/static/css/styles.css */
+
+/* ... (other styles) */
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="url"],
+form input[type="file"],
+form textarea,
+form select,
+#selectedSkills {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border don't add to width */
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.index-container{
+    text-align: center;
+}
+
+.index-container h2 {
+    font-size: 5rem;
+    margin: 25vh auto 20px;
+}
+
+.index-container p {
+    font-size: 2rem;
+    margin: 0 auto 50px;
+}
+
+.index-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin: 15px auto;
+}
+
+.index-btn
+ {
+    width: 45%;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px auto;
+}
+
+
+.logout-btn-index {
+    width: 20%;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px auto;
+}
+
+
+#addSkillButton {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 auto 20px;
+    /* Add more styles  as needed */
+}
+
+form button[type="submit"],
+.login-btn,
+.reg-btn,
+.edit-profile-btn {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px auto;
+}
+
+#selectedSkills {
+    list-style-type: none;
+    padding: 15px;
+    margin: 0 auto 20px;
+}
+#selectedSkills li {
+    margin-bottom: 5px;
+    /* Add more styles as needed */
+}
+
+.error {
+    color: #c40000;
+    list-style: none;
+    margin: 10px auto;
+    padding: 15px 20px;
+    background-color: rgba(220, 53, 69, 0.2);
+    text-align: center;
+    border-radius: 8px;
+    /*border: 0.2px solid #c40000;*/
+}
+
+.employer-check-box label{
+    display: inline-block;
+
+}
+
+.employer-check-box {
+    margin: 20px auto;
+}
+
+
+nav {
+
+
+}
+nav ul {
+    display: flex;
+    justify-content: right;
+    padding: 10px 30px;
+    font-size: 2rem;
+}
+
+nav ul li a {
+    color: #1c1c1c;
+}
+
+nav ul li {
+    padding: 0 15px;
+}
+
+/*-------------user_profile-------------------*/
+
+.profile-info {
+    display: flex;
+
+    margin: 100px auto;
+}
+
+.profile_pic_container {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.profile_pic {
+    width: 60%;
+    border-radius: 100%;
+}
+
+.profile_details {
+    width: 40%;
+    font-size: 1.4rem;
+    margin-left: 5%;
+}
+
+.profile_details ul {
+    padding: 10px 50px;
+    border-radius: 4px;
+    background-color: rgba(136, 136, 136, 0.15);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*-------------all_profiles------------------*/
+
+.all-profiles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.all-profiles li {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.16);
+    border: solid 0.5px rgba(0, 0, 0, 0.55);
+    width: 60%;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.all-profiles li a {
+    color: black;
+}
+
+.back-to-profile-btn {
+    margin: 15px 0;
+    padding: 8px;
+    border-radius: 3px;
+    border: 0.3px solid rgba(0, 0, 0, 0.87);
+    background-color: transparent;
+
+}
+
+.back-to-profile-btn a {
+    color: rgba(0, 0, 0, 0.87);
+}

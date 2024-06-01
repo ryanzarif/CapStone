@@ -1,0 +1,32 @@
+<!-- capstone/jobBoard/templates/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - Job Board{% endblock %}
+
+{% block content %}
+    <div class="index-container">
+        <h2>Welcome to Job Board</h2>
+        <p>This is a platform connecting employers and employees.</p>
+
+        <div>
+
+            {% if user.is_authenticated %}
+                <p>Welcome, <b>{{ user.username }}!</b></p>
+                <div class="index-btns">
+                    <button type="button" class="index-btn"><a href="{% url 'logout' %}">Logout</a></button>
+                    <button type="button" class="index-btn"><a
+                            href="{% url 'user_profile' username=request.user.username %}">My Profile</a></button>
+                </div>
+            {% else %}
+                <div class="index-btns">
+                    <button type="button" class="index-btn">
+                        <a href="{% url 'register' %}">Register</a>
+                    </button>
+                    <button type="button" class="index-btn">
+                        <a href="{% url 'login' %}">Login</a>
+                    </button>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

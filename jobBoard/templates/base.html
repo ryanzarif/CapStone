@@ -1,0 +1,28 @@
+<!-- capstone/jobBoard/templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Job Board{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media-queries.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Job Board{% endblock %}</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Job Board</p>
+    </footer>
+</body>
+</html>

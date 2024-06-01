@@ -1,0 +1,100 @@
+<!-- user_profile.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            <li><a href="{% url 'all_profiles' %}">All Users</a></li>
+            {% if user_profile.is_employer %}
+                <li><a href="#">New Project</a></li>
+            {% else %}
+                <li><a href="{% url 'all_profiles' %}">All Projects</a></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+
+
+    {% if user_profile.user != request.user %}
+        <button type="button" class="back-to-profile-btn"><a
+                href="{% url 'user_profile' username=request.user.username %}">< My Profile</a></button>
+    {% endif %}
+
+    <div class="profile-info">
+        <div class="profile_pic_container">
+            {% if user_profile.profile_picture %}
+                <img class="profile_pic" src="{{ user_profile.profile_picture.url }}">
+            {% else %}
+                <img class="profile_pic" src="../../../media/full-m2i8A0d3b1N4i8A0.png">
+            {% endif %}
+
+        </div>
+        <div class="profile_details">
+            <h1>{{ user_profile.user.username }}</h1>
+
+            {% if user_profile.is_employer %}
+                <h6>employer</h6>
+            {% else %}
+                <h6>employee</h6>
+            {% endif %}
+            <br>
+            <p><b>Email:</b> {{ user_profile.user.email }}</p>
+            <p><b>Description:</b> {{ user_profile.description }}</p>
+
+            {% if user_skills %}
+                <p><b>Skills:</b></p>
+                <ul>
+                    {% for skill in user_skills %}
+                        <li>{{ skill.name }}</li>
+                    {% endfor %}
+                </ul>
+
+            {% endif %}
+
+            {% if user_profile.country %}
+                <p><b>Country:</b> {{ user_profile.country }}</p>
+            {% endif %}
+            {% if user_profile.linkedin_account %}
+                <p><b>Linkedin Account:</b> {{ user_profile.linkedin_account }}</p>
+            {% endif %}
+            {% if user_profile.education %}
+                <p><b>Education:</b> {{ user_profile.education }}</p>
+            {% endif %}
+            {% if user_profile.current_job %}
+                <p><b>Current Job:</b> {{ user_profile.current_job }}</p>
+            {% endif %}
+            {% if user_profile.previous_jobs_experience %}
+                <p><b>Experience:</b> {{ user_profile.previous_jobs_experience }}</p>
+            {% endif %}
+            {% if user_profile.phone_number %}
+                <p><b>Phone Number:</b> {{ user_profile.phone_number }}</p>
+            {% endif %}
+            {% if user_profile.join_date %}
+                <p><b>Joined On:</b> {{ user_profile.join_date }}</p>
+            {% endif %}
+
+
+            {% if user_profile.user == request.user %}
+                <button type="button" class="edit-profile-btn">
+                    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+                </button>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {#    {% if user_profile.is_employer %}#}
+    {#        <p>New Project</p>#}
+    {#    {% else %}#}
+    {#        <p>All Projects</p>#}
+    {#    {% endif %}#}
+    {#  <a href="{% url 'edit_profile' %}">Edit Profile</a>#}
+
+
+{% endblock %}

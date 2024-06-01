@@ -1,0 +1,22 @@
+<!-- capstone/jobBoard/templates/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login - Job Board{% endblock %}
+
+{% block content %}
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% if form.errors %}
+            <div class="error">{{ form.errors }}</div>
+        {% endif %}
+
+
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+        <button type="button" class="reg-btn">
+            <a href="{% url 'register' %}">Register</a>
+        </button>
+    </form>
+
+{% endblock %}

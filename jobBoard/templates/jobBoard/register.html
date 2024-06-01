@@ -1,0 +1,144 @@
+<!-- capstone/jobBoard/templates/register.html -->
+{% extends 'base.html' %}
+
+
+{% block title %}Register - Job Board{% endblock %}
+
+{% block content %}
+    <h2>Register</h2>
+    <form method="post" enctype="multipart/form-data" id="registrationForm">
+        {% csrf_token %}
+
+        <div>
+            <label for="id_username">Username:</label>
+            {% for error in form.username.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.username }}
+        </div>
+        <div>
+            <label for="id_first_name">First Name:</label>
+            {% for error in form.first_name.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.first_name }}
+        </div>
+        <div>
+            <label for="id_last_name">Last Name:</label>
+            {% for error in form.last_name.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.last_name }}
+        </div>
+        <div>
+            <label for="id_email">Email:</label>
+            {% for error in form.email.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.email }}
+        </div>
+        <div>
+            <label for="id_password1">Password:</label>
+            {% for error in form.password1.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.password1 }}
+
+        </div>
+        <div>
+            <label for="id_password2">Confirm Password:</label>
+            {% for error in form.password2.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.password2 }}
+
+        </div>
+        <div class="employer-check-box">
+            <label for="id_is_employer">Are you an employer?</label>
+            {% for error in form.is_employer.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.is_employer }}
+        </div>
+        <div>
+            <label for="id_phone_number">Phone Number:</label>
+            {% for error in form.phone_number.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.phone_number }}
+        </div>
+        <div>
+            <label for="id_country">Country:</label>
+            {% for error in form.country.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.country }}
+        </div>
+        <div>
+            <label for="id_linkedin_account">LinkedIn Account:</label>
+            {% for error in form.linkedin_account.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.linkedin_account }}
+        </div>
+        <div>
+            <label for="id_profile_picture">Profile Picture:</label>
+            {% for error in form.profile_picture.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.profile_picture }}
+        </div>
+        <div>
+            <label for="id_description">Description:</label>
+            {% for error in form.description.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.description }}
+        </div>
+        <div>
+            <label for="id_education">Education:</label>
+            {% for error in form.education.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.education }}
+        </div>
+        <div>
+            <label for="id_current_job">Current Job:</label>
+            {% for error in form.current_job.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.current_job }}
+        </div>
+        <div>
+            <label for="id_previous_jobs_experience">Previous Jobs Experience:</label>
+            {% for error in form.previous_jobs_experience.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+            {{ form.previous_jobs_experience }}
+        </div>
+
+
+        <div id="employeeSkills" style="display: none;">
+            <label for="id_skills">Select Your Skills:</label>
+{#            <select id="id_skills" name="skills" multiple>#}
+{#                {% for skill in skills %}#}
+{#                    <option value="{{ skill.id }}">{{ skill.name }}</option>#}
+{#                {% endfor %}#}
+{#            </select>#}
+            {{ form.skills}}
+            <button type="button" id="addSkillButton">Add Skill</button>
+            <label for="selectedSkills">Your Skills:</label>
+            <ul id="selectedSkills"></ul>
+
+
+
+        </div>
+
+        <button type="submit">Register</button>
+        <button type="button" class="login-btn">
+            <a href="{% url 'login' %}">Login</a>
+        </button>
+    </form>
+
+
+{% endblock %}

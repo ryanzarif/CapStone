@@ -1,0 +1,92 @@
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 800px) {
+    nav ul {
+
+        padding: 10px 20px;
+        font-size: 1.4rem;
+    }
+    .index-btns {
+        display: block;
+    }
+
+    .index-btn {
+        width: 100%;
+        display: block;
+    }
+
+
+    .index-container h2 {
+        font-size: 3rem;
+    }
+
+    .index-container p {
+        font-size: 1.2rem;
+        margin: 0 auto 30px;
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile_pic_container {
+
+        width: 90%;
+    }
+    .profile_pic {
+        width: 100%;
+    }
+    .profile_details {
+        width: 80%;
+        font-size: 1.1rem;
+
+    }
+    .profile_details ul {
+        padding: 5px 25px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    header, footer {
+        padding: 5px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="url"],
+    form input[type="file"],
+    form textarea,
+    form select,
+    #selectedSkills {
+        padding: 8px;
+    }
+
+    form input[type="submit"] {
+        padding: 8px 16px;
+    }
+
+    .logout-btn-index {
+        width: 45%;
+    }
+
+    nav ul {
+        font-size: 1rem;
+    }
+}
